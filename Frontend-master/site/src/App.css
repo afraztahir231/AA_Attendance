@@ -1,0 +1,128 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.menu_button{
+  position : relative;
+  background-color : transparent;
+  width : 5vh;
+  height : 5vh;
+  border : 0px;
+  border-radius : 5px;
+  top : -95vh;
+  left : 91vw;
+}
+
+.menu_button:hover{
+  position : relative;
+  background-color : transparent;
+  width : 5vh;
+  height : 5vh;
+  border : 0px;
+  border-radius : 5px;
+  top : -95vh;
+  left : 91vw;
+  border : 1px solid white;
+}
+
+.menu_button_clicked{
+  position : relative;
+  background-color : transparent;
+  width : 5vh;
+  height : 5vh;
+  border : 0px;
+  top : 9.5vh;
+  left : 6vw;
+  border-radius : 5px;
+}
+
+.menu_button_clicked:hover{
+  position : relative;
+  background-color : transparent;
+  width : 5vh;
+  height : 5vh;
+  border : 0px;
+  border-radius : 5px;
+  border : 1px solid white;
+}
+
+.form_style{
+  position : relative;
+  border-radius : 25px;
+  border : 0px;
+  top : 25vh;
+  left : 30.7vw;
+  height : 5vh;
+  width : 15vh;
+  background-color : white;
+  text-align : center;
+}
+
+.form_style:hover{
+  position : relative;
+  border-radius : 25px;
+  border : 0px;
+  top : 25vh;
+  left : 30.7vw;
+  height : 5vh;
+  width : 15vh;
+  background-color : lightgray;
+  text-align : center;
+}
+
+.submit{
+  position : relative;
+  background-color : #3533cd;
+  top : -5vh;
+  height : 4.7vh;
+  border-radius : 0 0 40px 40px;
+  width : 69.19vw;
+  border : none;
+  color : white;
+}
+
+.submit:hover{
+  position : relative;
+  background-color : #000000;
+  top : -5vh;
+  height : 4.7vh;
+  border-radius : 0 0 40px 40px;
+  width : 69.19vw;
+  border : none;
+  color : white;
+}

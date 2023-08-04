@@ -8,6 +8,7 @@ import {Link} from "react-router-dom"
 const Upload = () => {
   const [image, setImage] = useState(null);
   const [filename, setfilename] = useState("No selected file.");
+  const [actualimage, setActual] = useState(null);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -130,22 +131,46 @@ const Upload = () => {
     borderRadius : "40px",
   };
 
+  const handleUpload = async () => {
+    if (actualimage) {
+      const formData = new FormData();
+      formData.append('image', actualimage);
+
+      try {
+        const response = await fetch('http://127.0.0.1:8000/api/upload/', {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (response.ok) {
+          console.log('Image uploaded successfully');
+        } else {
+          console.error('Image upload failed');
+        }
+      } catch (error) {
+        console.error('Error uploading image:', error);
+      }
+    }
+  };
+  
+
   return (
     <body>
       <div style = {div1_style}>
         <h1 style = {h1_style}>Enhance Ai</h1>
         <p style = {p_style}>Upscale your images using Ai</p>
         <div style = {upload_div}>
-          {image ? <><img style = {image_uploaded} src = {image} alt = "No Image Found"/><Link to = "/enhance" props = {{image_url : image, filename_ : filename}}><button className = "submit">Submit</button></Link> </>:
+          {image ? <><img style = {image_uploaded} src = {image} alt = "No Image Found"/><Link to = {'/enhance/Afraz Tahir'}><button className = "submit" onClick = {handleUpload}>Submit</button></Link> </>:
           <>
           <form className = "form_style" onClick={() => document.querySelector(".input-field").click()}>
             <p style = {form_p}>Upload Image</p>
-            <input type="file" accept = "image/*" className = "input-field" hidden 
+            <input type="file" accept = "image/*" className = "input-field" id = "input_image" hidden 
             onChange = {({target : {files}}) => {
               files[0] && setfilename(files[0].name)
               if(files)
               {
-                setImage(URL.createObjectURL(files[0]))
+                setImage(URL.createObjectURL(files[0]));
+                setActual(files[0]);
               }
             }}/>
           </form>

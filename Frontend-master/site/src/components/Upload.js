@@ -2,7 +2,7 @@ import React from 'react'
 import image1 from "../image.png";
 import triple_clicked from "../triple_clicked.png"
 import { useState } from 'react';
-import {Link} from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 
 const Upload = () => {
@@ -135,6 +135,7 @@ const Upload = () => {
     if (actualimage) {
       const formData = new FormData();
       formData.append('image', actualimage);
+      formData.append('filename', filename);
 
       try {
         const response = await fetch('http://127.0.0.1:8000/api/upload/', {
@@ -152,6 +153,8 @@ const Upload = () => {
       }
     }
   };
+
+  const path = "/enhance/" + filename
   
 
   return (
@@ -160,7 +163,7 @@ const Upload = () => {
         <h1 style = {h1_style}>Enhance Ai</h1>
         <p style = {p_style}>Upscale your images using Ai</p>
         <div style = {upload_div}>
-          {image ? <><img style = {image_uploaded} src = {image} alt = "No Image Found"/><Link to = {'/enhance/Afraz Tahir'}><button className = "submit" onClick = {handleUpload}>Submit</button></Link> </>:
+          {image ? <><img style = {image_uploaded} src = {image} alt = "No Image Found"/><a href = {path}><button className = "submit" onClick = {handleUpload}>Submit</button></a> </>:
           <>
           <form className = "form_style" onClick={() => document.querySelector(".input-field").click()}>
             <p style = {form_p}>Upload Image</p>

@@ -1,31 +1,27 @@
 import React from 'react'
 import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
 import image1 from "../image.png";
 import triple_clicked from "../triple_clicked.png"
 
-const Enhance = () => {
-  const username = "Afraz Tahir";
-  let [info,setInfo] = useState();
+const Enhance = (props) => {
+  const params = useParams();
+  const filename = params.filename;
+  console.log(filename);
   let [image, setImage] = useState('');
 
   useEffect(() => {
     getInfo();
   }, [])
 
+  const fetch_path = 'http://127.0.0.1:8000/api/enhanced/' + filename
   let getInfo = async () => {
-    let response = await fetch('http://127.0.0.1:8000/api/enhanced/Afraz%20Tahir/');
+    let response = await fetch(fetch_path);
     let data = await response.blob();
-    console.log(data);
-    if (data){
-      console.log("YESS!!");
-    }
-    else{
-      console.log("NO!!");
-    }
     const imageUrl = URL.createObjectURL(data);
-    console.log(imageUrl);
     setImage(imageUrl);
   } 
+
   const [isOpen, setIsOpen] = useState(false);
 
   const handleButtonClick = () => {
@@ -153,7 +149,7 @@ const Enhance = () => {
         <h1 style = {h1_style}>Enhance Ai</h1>
         <p style = {p_style}>Upscale your images using Ai</p>
         <div style = {upload_div}>
-        {image ? <img style = {image_uploaded} src = {image} alt = "Image should have been here"></img> : <h1>No!!</h1>}
+        {image ? <>{filename ? console.log("YESSSS FILE IS HERE!") : console.log("NOOOO FILE IS HERE!")}<img style = {image_uploaded} src = {image} alt = "Image should have been here"></img></> : <h1>No!!</h1>}
         </div>
         <div style = {img_container}>
           <img src = {image1} alt = "Image of Robot" style = {img_style}/>

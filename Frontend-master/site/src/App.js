@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route exact path = "/login" element = {<Login_page/>}></Route>
         <Route exact path = "/" element = {<><Upload /><Instr /><Footer /></>}></Route>
-        <Route exact path = "/enhance/:username" element = {<><Enhance /><Instr /><Footer /></>}></Route>
+        <Route exact path = "/enhance/:filename" element = {<><Enhance /><Instr /><Footer /></>}></Route>
       </Routes>
     </Router>
     </>

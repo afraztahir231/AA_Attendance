@@ -1,0 +1,52 @@
+.attendance-text{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    font-family: Ubuntu;
+}
+
+.start{
+    position: absolute;
+    left: 30%;
+    top: 85%;
+    font-family: Ubuntu;
+    height: 5vh;
+    width: 10vw;
+    border: None;
+    border-radius: 20px;
+}
+
+.stop{
+    position: absolute;
+    left: 53%;
+    top: 85%;
+    font-family: Ubuntu;
+    height: 5vh;
+    width: 10vw;
+    border: None;
+    border-radius: 20px;
+}
+
+.video{
+    position: absolute;
+    left: 25%;
+    top: 5%;
+    height: 70vh;
+    font-family: Ubuntu;
+}
+
+.status{
+    position: absolute;
+    top: 84%;
+    left: 80%;
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+
+.status-text{
+    position: absolute;
+    top: 89%;
+    left: 80.25%;
+}

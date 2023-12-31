@@ -1,0 +1,76 @@
+.main-div{
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    grid-template-rows: 100%;
+    grid-template-columns: 20% 60% 20%;
+    gap: 50 px;
+    background-color: white;
+}
+
+.left-login-div{
+    grid-column-start: 1;
+}
+.center-div{
+    grid-column-start: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.right-div{
+    grid-column-start: 3;
+}
+
+.email{
+    position: absolute;
+    left: 42.5%;
+    top: 40%;
+    width: 15vw;
+    height: 3.5vh;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+
+.password{
+    position: absolute;
+    left: 42.5%;
+    top: 45%;
+    width: 15vw;
+    height: 3.5vh;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+
+.login{
+    position: absolute;
+    left: 42.75%;
+    top: 50%;
+    width: 15vw;
+    height: 3.5vh;
+    margin-bottom: 5px;
+    border: None;
+    border-radius: 20px;
+}
+
+.signup{
+    position: absolute;
+    left: 42.75%;
+    top: 55%;
+    width: 15vw;
+    height: 3.5vh;
+    margin-bottom: 5px;
+    border: None;
+    border-radius: 20px;
+}
+
+.welcome-text{
+    position: absolute;
+    top: 30%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: italic;
+}
